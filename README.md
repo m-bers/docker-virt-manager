@@ -16,6 +16,8 @@ git, docker
     cd docker-virt-manager
     docker build -t docker-virt-manager . && docker-compose up -d
     
+Go to http://localhost:8085 in your browser
+
 ### Notes:
 In the `docker-compose.yml`, supply your own ssh key (already deployed to libvirt hosts) as a `volume` and libvirt connection strings as an `environment variable`, e.g.
 
