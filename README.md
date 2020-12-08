@@ -19,10 +19,10 @@ git, docker, docker-compose
 Go to http://localhost:8185 in your browser
 
 ### Notes:
-In the `docker-compose.yml`, supply your own ssh key (that you've already deployed to libvirt hosts) as a `volume` and libvirt connection strings as an `environment` variable, e.g.
+In the `docker-compose.yml`, supply your own ssh key (that you've already deployed to libvirt hosts) as a `volume` and libvirt connection strings in the `HOSTS` environment variable, e.g.
 
     environment:
-      AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+      HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
     volumes:
       - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
       
