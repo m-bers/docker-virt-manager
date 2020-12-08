@@ -8,7 +8,7 @@ broadway: https://developer.gnome.org/gtk3/stable/gtk-broadway.html
 Uses GTK3 Broadway (HTML5) backend--no vnc, xrdp, etc needed!
 
 ### Requirements:
-git, docker
+git, docker, docker-compose
 
 ### Usage: 
 
