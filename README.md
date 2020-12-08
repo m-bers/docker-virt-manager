@@ -1,6 +1,6 @@
 # Docker virt-manager
 
-![Docker virt-manager](https://github.com/m-bers/docker-virt-manager/blob/master/docker-virt-manager.png?raw=true)
+![Docker virt-manager](docker-virt-manager.png)
 
 ### What is it? 
 virt-manager: https://virt-manager.org/  
