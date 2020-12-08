@@ -5,7 +5,7 @@ services:
     image: docker-virt-manager:latest
     restart: always
     ports:
-      - 8085:8185
+      - 8185:8185
     environment:
     # Substitute comma separated qemu connect strings, e.g.: 
     # AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
