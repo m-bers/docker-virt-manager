@@ -9,7 +9,7 @@ services:
     environment:
     # Substitute comma separated qemu connect strings, e.g.: 
     # AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
-      AUTOCONNECT: "[]"
+      HOSTS: "[]"
     volumes:
     # Substitute location of ssh private key, e.g.:
     # - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
