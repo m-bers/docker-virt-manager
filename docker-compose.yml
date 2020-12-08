@@ -8,7 +8,7 @@ services:
       - 8185:8185
     environment:
     # Substitute comma separated qemu connect strings, e.g.: 
-    # AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+    # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
       HOSTS: "[]"
     volumes:
     # Substitute location of ssh private key, e.g.:
