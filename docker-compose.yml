@@ -1,0 +1,14 @@
+version: '3.6'
+
+services: 
+  virt-manager:
+    image: docker-virt-manager:latest
+    restart: always
+    environment:
+    # Substitute comma separated qemu connect strings, e.g.: 
+    # AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+      AUTOCONNECT: "[]"
+    ports:
+      - 8085:8185
+    volumes:
+      - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
