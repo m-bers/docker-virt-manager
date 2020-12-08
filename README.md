@@ -23,7 +23,9 @@ In the `docker-compose.yml`, supply your own ssh key (already deployed to libvir
 
     environment:
       AUTOCONNECT: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
-
+    volumes:
+      - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
+      
 ### To do:
 Publish to Docker Hub  
 Make a base image for broadway 
