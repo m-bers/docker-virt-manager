@@ -31,5 +31,4 @@ In the `docker-compose.yml`, supply your own ssh key (that you've already deploy
       
 ### To do:
 Publish to Docker Hub  
-Make a base image for broadway  
 Customizable options for virt-manager via gsettings and environment variables  
