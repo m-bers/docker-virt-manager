@@ -2,7 +2,7 @@ version: '3.6'
 
 services: 
   virt-manager:
-    image: docker-virt-manager:latest
+    image: mber5/virt-manager:latest
     restart: always
     ports:
       - 8185:8185
@@ -10,7 +10,6 @@ services:
     # Substitute comma separated qemu connect strings, e.g.: 
     # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
       HOSTS: "[]"
-    volumes:
+    #volumes:
     # Substitute location of ssh private key, e.g.:
-    # - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
-      - ssh_key_location_goes_here:/home/user/.ssh/id_rsa:ro
+    # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro

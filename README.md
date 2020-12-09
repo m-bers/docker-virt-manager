@@ -1,5 +1,5 @@
 # Docker virt-manager
-## `webui for libvirt/kvm`
+## broadway webui for libvirt/kvm
 ![Docker virt-manager](docker-virt-manager.png)
 
 ### What is it? 
@@ -27,9 +27,8 @@ In the `docker-compose.yml`, supply your own ssh key (that you've already deploy
     environment:
       HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
     volumes:
-      - ~/.ssh/id_rsa:/home/user/.ssh/id_rsa:ro
+      - /home/${USER}/.ssh/id_rsa:/root/.ssh/id_rsa:ro
       
 ### To do:
 Publish to Docker Hub  
-Make a base image for broadway 
 Customizable options for virt-manager via gsettings and environment variables  
