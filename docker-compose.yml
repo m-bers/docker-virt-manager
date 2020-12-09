@@ -2,7 +2,7 @@ version: '3.6'
 
 services: 
   virt-manager:
-    image: mber5/virt-manager:latest
+    image: mber5/virt-manager:debian
     restart: always
     ports:
       - 8185:80
