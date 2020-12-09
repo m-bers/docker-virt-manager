@@ -14,8 +14,4 @@ RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 COPY startapp.sh /usr/local/bin/startapp
 
-
-EXPOSE 8185
-
-# overwrite this with 'CMD []' in a dependent Dockerfile
 CMD ["/usr/local/bin/startapp"]

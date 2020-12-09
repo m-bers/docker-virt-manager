@@ -15,6 +15,24 @@ git, docker, docker-compose, at least one libvirt/kvm host
 
 ### Usage: 
 
+#### docker-compose:
+
+    services: 
+      virt-manager:
+        image: mber5/virt-manager:latest
+        restart: always
+        ports:
+          - 8185:80
+        environment:
+        # Substitute comma separated qemu connect strings, e.g.: 
+        # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+          HOSTS: "[]"
+        volumes:
+        # Substitute location of ssh private key, e.g.:
+          - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+
+#### Building from Dockerfile:
+
     git clone https://github.com/m-bers/docker-virt-manager.git
     cd docker-virt-manager
     docker build -t docker-virt-manager . && docker-compose up -d

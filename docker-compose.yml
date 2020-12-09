@@ -5,7 +5,7 @@ services:
     image: mber5/virt-manager:latest
     restart: always
     ports:
-      - 8185:8185
+      - 8185:80
     environment:
     # Substitute comma separated qemu connect strings, e.g.: 
     # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
