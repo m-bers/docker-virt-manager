@@ -17,39 +17,38 @@ git, docker, docker-compose, at least one libvirt/kvm host
 
 #### docker-compose
 
-##### If docker and libvirt are on the same host
+If docker and libvirt are on the same host
 ```
-version: '3.6'
-
 services: 
   virt-manager:
     image: mber5/virt-manager:latest
     restart: always
     ports:
       - 8185:80
-    devices:
-      - "/dev/kvm:/dev/kvm"
     environment:
       HOSTS: "['qemu:///system']"
     volumes:
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
       - "/var/lib/libvirt/images:/var/lib/libvirt/images"
+    devices:
+      - "/dev/kvm:/dev/kvm"
 ```
-##### If docker and libvirt are on different hosts
-    services: 
-      virt-manager:
-        image: mber5/virt-manager:latest
-        restart: always
-        ports:
-          - 8185:80
-        environment:
-        # Substitute comma separated qemu connect strings, e.g.: 
-        # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
-          HOSTS: "[]"
-        volumes:
-        # Substitute location of ssh private key, e.g.:
-          - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
-
+If docker and libvirt are on different hosts
+```
+services: 
+  virt-manager:
+    image: mber5/virt-manager:latest
+    restart: always
+    ports:
+      - 8185:80
+    environment:
+    # Substitute comma separated qemu connect strings, e.g.: 
+    # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
+      HOSTS: "[]"
+    volumes:
+    # Substitute location of ssh private key, e.g.:
+      - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+```
 #### Building from Dockerfile
 
     git clone https://github.com/m-bers/docker-virt-manager.git
