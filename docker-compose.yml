@@ -13,8 +13,8 @@ services:
       # Volumes needed if connecting to local qemu:///system
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
       - "/var/lib/libvirt/images:/var/lib/libvirt/images"
-      
       # If connecting to remote libvirtd, substitute location of ssh private key, e.g.:
       # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
     devices:
+      # Not needed if connecting to remote libvirtd
       - "/dev/kvm:/dev/kvm"
