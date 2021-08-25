@@ -1,4 +1,6 @@
 ![](https://github.com/m-bers/docker-virt-manager/workflows/docker%20build/badge.svg)
+# Changes to the Original one 
+- can use SSH Key with passphrases
 # Docker virt-manager
 ## broadway webui for libvirt/kvm
 ![Docker virt-manager](docker-virt-manager.png)

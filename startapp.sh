@@ -6,4 +6,4 @@
 # ↓↓↓ PUT COMAMNDS HERE ↓↓↓
 dbus-launch gsettings set org.virt-manager.virt-manager.connections uris "$HOSTS"
 dbus-launch gsettings set org.virt-manager.virt-manager.connections autoconnect "$HOSTS"
-virt-manager --no-fork
+tilix 

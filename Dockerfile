@@ -6,12 +6,12 @@ ENV CORNER_IMAGE_URL='https://raw.githubusercontent.com/virt-manager/virt-manage
 ENV HOSTS="[]"
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends virt-manager dbus-x11 libglib2.0-bin gir1.2-spiceclientgtk-3.0 ssh 
+RUN apt-get install -y --no-install-recommends virt-manager dbus-x11 libglib2.0-bin gir1.2-spiceclientgtk-3.0 ssh tilix 
 RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/.ssh
 RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
-
+RUN echo "eval \$(ssh-agent) && ssh-add && echo virt-manager | sh" > /root/.bashrc
 COPY startapp.sh /usr/local/bin/startapp
 
 CMD ["/usr/local/bin/startapp"]

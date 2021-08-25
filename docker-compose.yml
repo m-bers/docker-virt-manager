@@ -1,20 +1,12 @@
 services: 
   virt-manager:
-    image: mber5/virt-manager:latest
+    image: docker-virt-manager:latest
     restart: always
     ports:
       - 8185:80
     environment:
-    # If connecting to remote libvirtd, you can use a qemu+ssh string like below. Default qemu:///system will connect to local libvirtd: 
+    # Substitute comma separated qemu connect strings, e.g.: 
     # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
-      HOSTS: "['qemu:///system']"
-      
+      HOSTS: "[]"
     volumes:
-      # Volumes needed if connecting to local qemu:///system
-      - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
-      - "/var/lib/libvirt/images:/var/lib/libvirt/images"
-      # If connecting to remote libvirtd, substitute location of ssh private key, e.g.:
-      # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
-    devices:
-      # Not needed if connecting to remote libvirtd
-      - "/dev/kvm:/dev/kvm"
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa:ro 
