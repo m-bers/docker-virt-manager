@@ -6,4 +6,5 @@
 # ↓↓↓ PUT COMAMNDS HERE ↓↓↓
 dbus-launch gsettings set org.virt-manager.virt-manager.connections uris "$HOSTS"
 dbus-launch gsettings set org.virt-manager.virt-manager.connections autoconnect "$HOSTS"
+dbus-launch gsettings set org.virt-manager.virt-manager xmleditor-enabled true
 virt-manager --no-fork
