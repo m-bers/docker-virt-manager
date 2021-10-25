@@ -50,7 +50,6 @@ services:
     restart: always
     ports:
       - 8185:80
-      - 7681:7681 # ttyd terminal, only required for password based auth or ssh key passphrases
     environment:
       # Substitute comma separated qemu connect strings, e.g.: 
       # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"

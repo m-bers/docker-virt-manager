@@ -4,24 +4,23 @@ services:
     restart: always
     ports:
       - 8185:80
-      - 7681:7681 # ttyd terminal, required for password based auth or ssh key passphrases
 
     environment:
-# If connecting to remote libvirtd, you can use a qemu+ssh string like below. Default qemu:///system will connect to local libvirtd: 
+    # If connecting to remote libvirtd, you can use a qemu+ssh string like below. Default qemu:///system will connect to local libvirtd: 
     # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
       HOSTS: "['qemu:///system']"
 
-# If on an Ubuntu host (or any host with the libvirt AppArmor policy, you will need to use an ssh connection to localhost
-# or use qemu:///system and uncomment the below line to run the container in privileged mode: 
+    # If on an Ubuntu host (or any host with the libvirt AppArmor policy, you will need to use an ssh connection to localhost
+    # or use qemu:///system and uncomment the below line to run the container in privileged mode: 
     # privileged: true
 
     volumes:
-# Volumes needed if connecting to local qemu:///system
+    # Volumes needed if connecting to local qemu:///system
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
       - "/var/lib/libvirt/images:/var/lib/libvirt/images"
 
-# If connecting to remote libvirtd, substitute location of ssh private key, e.g.:
+    # If connecting to remote libvirtd, substitute location of ssh private key, e.g.:
       # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
     devices:
-# Not needed if connecting to remote libvirtd
+    # Not needed if connecting to remote libvirtd
       - "/dev/kvm:/dev/kvm"
