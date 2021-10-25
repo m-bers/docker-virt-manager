@@ -1,4 +1,4 @@
-![](https://github.com/m-bers/docker-virt-manager/workflows/docker%20build/badge.svg)
+![](https://github.com/m-bers/docker-virt-manager/workflows/docker%20build/badge.svg)![Docker Pulls](https://img.shields.io/docker/pulls/mber5/virt-manager)
 # Docker virt-manager
 ## broadway webui for libvirt/kvm
 ![Docker virt-manager](docker-virt-manager.png)
