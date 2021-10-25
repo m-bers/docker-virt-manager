@@ -24,14 +24,18 @@ services:
   virt-manager:
     image: mber5/virt-manager:latest
     restart: always
+    
     ports:
       - 8185:80
+      
     environment:
       HOSTS: "['qemu:///system']"
     
-# If on an Ubuntu host (or any host with the libvirt AppArmor policy, you will need to use an ssh connection to localhost
-# or use qemu:///system and uncomment the below line to run the container in privileged mode: 
+    # If on an Ubuntu host (or any host with the libvirt AppArmor policy, you will need to use an ssh connection to localhost
+    # or use qemu:///system and uncomment the below line to run the container in privileged mode: 
+
     # privileged: true
+
     volumes:
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
       - "/var/lib/libvirt/images:/var/lib/libvirt/images"
@@ -44,15 +48,18 @@ services:
   virt-manager:
     image: mber5/virt-manager:latest
     restart: always
+
     ports:
       - 8185:80
-      - 7681:7681 # ttyd terminal, required for password based auth or ssh key passphrases
+      - 7681:7681 # ttyd terminal, only required for password based auth or ssh key passphrases
+
     environment:
-# Substitute comma separated qemu connect strings, e.g.: 
+      # Substitute comma separated qemu connect strings, e.g.: 
       # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
       HOSTS: "[]"
-    volumes:
-# If not using password auth, substitute location of ssh private key, e.g.:
+
+    # volumes:
+      # If not using password auth, substitute location of ssh private key, e.g.:
       # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
 ```
 #### Building from Dockerfile
