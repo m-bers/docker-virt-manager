@@ -13,6 +13,7 @@ Uses GTK3 Broadway (HTML5) backend--no vnc, xrdp, etc needed!
 
 New: Password/SSH passphrase support via ttyd (thanks to [@obazda20](https://github.com/obazda20/docker-virt-manager) for the idea!)
 Just click the terminal icon at the bottom left to get to the password prompt after adding an ssh connection. 
+
 <img width="114" alt="Screen Shot 2021-10-25 at 12 01 02 AM" src="https://user-images.githubusercontent.com/4750774/138649110-73c097cc-b054-424c-8fa0-d0c23540b499.png">
 
 
