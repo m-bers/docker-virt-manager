@@ -6,8 +6,10 @@ ENV CORNER_IMAGE_URL='https://raw.githubusercontent.com/virt-manager/virt-manage
 ENV HOSTS="[]"
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends virt-manager dbus-x11 libglib2.0-bin gir1.2-spiceclientgtk-3.0 ssh 
+RUN apt-get install -y --no-install-recommends virt-manager dbus-x11 libglib2.0-bin gir1.2-spiceclientgtk-3.0 ssh wget
 RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/*
+RUN wget -O /usr/bin/ttyd "https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.$(uname -m)"
+RUN chmod +x /usr/bin/ttyd
 
 RUN mkdir -p /root/.ssh
 RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
