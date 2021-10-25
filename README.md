@@ -11,6 +11,8 @@ broadway: https://developer.gnome.org/gtk3/stable/gtk-broadway.html
 ### Features:
 Uses GTK3 Broadway (HTML5) backend--no vnc, xrdp, etc needed!
 
+New: Password/SSH passphrase support via ttyd (thanks to [@obazda20](https://github.com/obazda20/docker-virt-manager) for the idea!
+
 ### Requirements:
 git, docker, docker-compose, at least one libvirt/kvm host
 

@@ -4,7 +4,7 @@ services:
     restart: always
     ports:
       - 8185:80
-      - 7681:7681 # ttyd terminal, required for password based auth or ssh key passphrases
+      # - 7681:7681 # ttyd terminal, required for password based auth or ssh key passphrases
 
     environment:
 # If connecting to remote libvirtd, you can use a qemu+ssh string like below. Default qemu:///system will connect to local libvirtd: 
@@ -19,7 +19,7 @@ services:
 # Volumes needed if connecting to local qemu:///system
       - "/var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock"
       - "/var/lib/libvirt/images:/var/lib/libvirt/images"
-      
+
 # If connecting to remote libvirtd, substitute location of ssh private key, e.g.:
       # - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
     devices:
