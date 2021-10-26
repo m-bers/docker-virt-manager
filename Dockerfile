@@ -3,6 +3,7 @@ FROM mber5/broadway-baseimage:latest
 ENV FAVICON_URL='https://raw.githubusercontent.com/virt-manager/virt-manager/931936a328d22413bb663e0e21d2f7bb111dbd7c/data/icons/256x256/apps/virt-manager.png'
 ENV APP_TITLE='Virtual Machine Manager'
 ENV CORNER_IMAGE_URL='https://raw.githubusercontent.com/virt-manager/virt-manager/931936a328d22413bb663e0e21d2f7bb111dbd7c/data/icons/256x256/apps/virt-manager.png'
+ENV BG_GRADIENT="#ddd, #999"
 ENV HOSTS="[]"
 
 RUN apt-get update
