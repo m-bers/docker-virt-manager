@@ -6,6 +6,8 @@ services:
       - 8185:80
 
     environment:
+    # Set DARK_MODE to true to enable dark mode
+      DARK_MODE: false 
     # If connecting to remote libvirtd, you can use a qemu+ssh string like below. Default qemu:///system will connect to local libvirtd: 
     # HOSTS: "['qemu+ssh://user@host1/system', 'qemu+ssh://user@host2/system']"
       HOSTS: "['qemu:///system']"
