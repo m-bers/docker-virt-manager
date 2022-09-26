@@ -8,5 +8,7 @@ dbus-launch gsettings set org.virt-manager.virt-manager.connections uris "$HOSTS
 dbus-launch gsettings set org.virt-manager.virt-manager.connections autoconnect "$HOSTS"
 dbus-launch gsettings set org.virt-manager.virt-manager xmleditor-enabled true
 tmux split-window -v -t ttyd
-tmux send-keys -t ttyd.top dbus-launch\ virt-manager\ --no-fork Enter
-sleep infinity
+while true; do
+ps -a | grep -q virt-manager || tmux send-keys -t ttyd.top dbus-launch\ virt-manager\ --no-fork Enter
+sleep 10
+done
