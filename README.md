@@ -29,7 +29,7 @@ services:
     image: mber5/virt-manager:latest
     restart: always
     ports:
-      - 8185:80
+      - 127.0.0.1:8185:80
     environment:
     # Set DARK_MODE to true to enable dark mode
       DARK_MODE: false
@@ -56,7 +56,7 @@ services:
     image: mber5/virt-manager:latest
     restart: always
     ports:
-      - 8185:80
+      - 127.0.0.1:8185:80
     environment:
     # Set DARK_MODE to true to enable dark mode
       DARK_MODE: false
@@ -74,4 +74,10 @@ services:
     cd docker-virt-manager
     docker build -t docker-virt-manager . && docker-compose up -d
 ```
-Go to http://localhost:8185 in your browser
+Go to http://localhost:8185 in your browser.
+
+### Security Warning
+
+It is highly suggested to not change the default binding address (`127.0.0.1`), to prevent computers connected in the same Local Area Network of your hypervisor access to _virt-manger_.
+
+It is also worth mentioning that a **[very motivated attacker having access to your LAN, could still be able to access even when binded on `127.0.0.1`](https://gist.github.com/guns/1dc1742dce690eb560a3a2d7581a9632)**.
