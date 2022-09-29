@@ -3,7 +3,7 @@ services:
     image: mber5/virt-manager:latest
     restart: always
     ports:
-      - 8185:80
+      - 127.0.0.1:8185:80
 
     environment:
     # Set DARK_MODE to true to enable dark mode
